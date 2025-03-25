@@ -62,3 +62,20 @@ workload_item* _get_items(const char* filepath)
     fclose(file);
     return items;
 }
+
+int _get_priority_sum(workload_item* tasks, const size_t count)
+{
+    if (!tasks)
+    {
+        return -1;
+    }
+
+    int sum = 0;
+
+    for (size_t idx = 0; idx < count; ++idx)
+    {
+        sum += tasks[idx].prio;
+    }
+
+    return sum;
+}
